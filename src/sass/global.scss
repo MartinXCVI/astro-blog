@@ -18,41 +18,6 @@
   }
 }
 
-:root {
-  --_hue: 235;
-
-  // Light Mode
-
-  --bkg--light: var(--_hue) 25% 97%;
-  --txt--light: var(--_hue) 40% 5%;
-  --accent--light: var(--_hue) 55% 50%;
-  --muted--light: var(--_hue) 30% 99%;
-  // Dark Mode
-  --bkg--dark: var(--_hue) 15% 10%;
-  --txt--dark: var(--_hue) 20% 85%;
-  --accent--dark: var(--_hue) 50% 50%;
-  --muted--dark: var(--_hue) 20% 2%;
-
-  --bkg: var(--bkg--light);
-  --txt: var(--txt--light);
-  --accent: var(--accent--light);
-  --muted: var(--muted--light);
-  color-scheme: light;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bkg: var(--bkg--dark);
-    --txt: var(--txt--dark);
-    --accent: var(--accent--dark);
-    --muted: var(--muted--dark);
-    color-scheme: dark;
-    --_shadow-strength: .75;
-    --_shadow-saturation: 75%;
-    --_shadow-lightness: 6%;
-  }
-}
-
 html {
   scroll-behavior: smooth;
 }

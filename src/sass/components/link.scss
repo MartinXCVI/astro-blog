@@ -1,0 +1,52 @@
+@use '../includes/colors' as color;
+@use '../includes/mixins' as mx;
+@use '../includes/variables' as var;
+@use '../includes/typography' as font;
+@use '../includes/classes';
+
+.link {
+  width: fit-content;
+  display: flex;
+  place-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: 3px solid transparent;
+  text-decoration: none;
+  line-height: 1;
+  &:focus-visible {
+    box-shadow: 0 0 0 3px hsl(235 25% 97%), 0 0 0 6px transparent;
+  }
+  * {
+    pointer-events: none;
+    user-select: none;
+  }
+  svg {
+    height: 1rem;
+    width: 1rem;
+  }
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+.primary {
+  background-color: hsl(235 40% 5%) !important;
+}
+.secondary {
+  background-color: hsl(235 55% 50%) !important;
+  color: hsl(235 25% 97%) !important;
+}
+.filled {
+  background-color: transparent !important;
+  color: hsl(235 40% 5%) !important;
+}
+.bordered {
+  border-color: hsl(235 40% 5%);
+}
+
+[aria-current="page"] {
+  background-color: hsl(235 55% 50%);
+}

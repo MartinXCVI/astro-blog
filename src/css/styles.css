@@ -1,6 +1,4 @@
 /*----- Global -----*/
-/*----- Includes -----*/
-/*----- Components -----*/
 /*----- Views -----*/
 /*----- Fonts & Icons -----*/
 @import url("https://fonts.googleapis.com/css2?family=Kurale&display=swap");
@@ -22,35 +20,6 @@
   color: #fdfdfd;
 }
 
-:root {
-  --_hue: 235;
-  --bkg--light: var(--_hue) 25% 97%;
-  --txt--light: var(--_hue) 40% 5%;
-  --accent--light: var(--_hue) 55% 50%;
-  --muted--light: var(--_hue) 30% 99%;
-  --bkg--dark: var(--_hue) 15% 10%;
-  --txt--dark: var(--_hue) 20% 85%;
-  --accent--dark: var(--_hue) 50% 50%;
-  --muted--dark: var(--_hue) 20% 2%;
-  --bkg: var(--bkg--light);
-  --txt: var(--txt--light);
-  --accent: var(--accent--light);
-  --muted: var(--muted--light);
-  color-scheme: light;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bkg: var(--bkg--dark);
-    --txt: var(--txt--dark);
-    --accent: var(--accent--dark);
-    --muted: var(--muted--dark);
-    color-scheme: dark;
-    --_shadow-strength: .75;
-    --_shadow-saturation: 75%;
-    --_shadow-lightness: 6%;
-  }
-}
 html {
   scroll-behavior: smooth;
 }
@@ -97,6 +66,116 @@ picture {
   p {
     font-size: 1rem;
   }
+}
+/*----- Includes -----*/
+/*----- Components -----*/
+.text-center {
+  text-align: center;
+}
+
+.capital {
+  text-transform: capitalize;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+.over-x {
+  overflow-x: hidden;
+}
+
+.over-y {
+  overflow-y: hidden;
+}
+
+.over-hidden {
+  overflow: hidden;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f6f6f6;
+  color: #151515;
+  box-shadow: 0.2px 0.5px 0.6px hsla(235, 30%, 62%, 0.25), 1.1px 2.7px 3.3px -0.4px hsla(235, 30%, 62%, 0.25), 2.1px 5px 6.1px -0.7px hsla(235, 30%, 62%, 0.25), 3.5px 8.3px 10.1px -1.1px hsla(235, 30%, 62%, 0.25), 5.6px 13.2px 16.1px -1.4px hsla(235, 30%, 62%, 0.25), 8.7px 20.7px 25.3px -1.8px hsla(235, 30%, 62%, 0.25), 13.3px 31.4px 38.4px -2.1px hsla(235, 30%, 62%, 0.25), 19.6px 46.3px 56.6px -2.5px hsla(235, 30%, 62%, 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background-color: #060606;
+    color: #fdfdfd;
+  }
+}
+[aria-label=Primary] {
+  width: 100%;
+  padding: 1rem;
+  background-color: hsl(235, 30%, 95%);
+  box-shadow: 0.5px 0.75px 0.6px hsla(235, 30%, 62%, 0.25), 0.75px 1px 1px -1.2px hsla(235, 30%, 62%, 0.25), 1px 2.25px 2.5px -2.5px hsla(235, 30%, 62%, 0.25);
+}
+[aria-label=Primary] ul {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.link {
+  width: fit-content;
+  display: flex;
+  place-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: 3px solid transparent;
+  text-decoration: none;
+  line-height: 1;
+}
+.link:focus-visible {
+  box-shadow: 0 0 0 3px hsl(235, 25%, 97%), 0 0 0 6px transparent;
+}
+.link * {
+  pointer-events: none;
+  user-select: none;
+}
+.link svg {
+  height: 1rem;
+  width: 1rem;
+}
+.link:hover {
+  opacity: 0.8;
+}
+
+.primary {
+  background-color: hsl(235, 40%, 5%) !important;
+}
+
+.secondary {
+  background-color: hsl(235, 55%, 50%) !important;
+  color: hsl(235, 25%, 97%) !important;
+}
+
+.filled {
+  background-color: transparent !important;
+  color: hsl(235, 40%, 5%) !important;
+}
+
+.bordered {
+  border-color: hsl(235, 40%, 5%);
+}
+
+[aria-current=page] {
+  background-color: hsl(235, 55%, 50%);
 }
 
 /*# sourceMappingURL=styles.css.map */

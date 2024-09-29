@@ -1,0 +1,27 @@
+@use '../includes/colors' as color;
+@use '../includes/mixins' as mx;
+@use '../includes/variables' as var;
+@use '../includes/typography' as font;
+@use '../includes/classes';
+
+[aria-label="Primary"] {
+  width: 100%;
+  padding: 1rem;
+  background-color: color.$fifthColor;
+  box-shadow: 0.5px 0.75px 0.6px hsl(235 30% 62% / 0.25),
+  0.75px 1px 1px -1.2px hsl(235 30% 62% / 0.25),
+  1px 2.25px 2.5px -2.5px hsl(235 30% 62% / 0.25);
+  ul {
+    display: flex;
+    gap: 0.75rem;
+  }
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  @include mx.flexRow(var.$between, center);
+  // max-width: 1500px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
