@@ -1,0 +1,102 @@
+/*----- Global -----*/
+/*----- Includes -----*/
+/*----- Components -----*/
+/*----- Views -----*/
+/*----- Fonts & Icons -----*/
+@import url("https://fonts.googleapis.com/css2?family=Kurale&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css");
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+*::selection {
+  background-color: #007000;
+  color: #fdfdfd;
+}
+
+:root {
+  --_hue: 235;
+  --bkg--light: var(--_hue) 25% 97%;
+  --txt--light: var(--_hue) 40% 5%;
+  --accent--light: var(--_hue) 55% 50%;
+  --muted--light: var(--_hue) 30% 99%;
+  --bkg--dark: var(--_hue) 15% 10%;
+  --txt--dark: var(--_hue) 20% 85%;
+  --accent--dark: var(--_hue) 50% 50%;
+  --muted--dark: var(--_hue) 20% 2%;
+  --bkg: var(--bkg--light);
+  --txt: var(--txt--light);
+  --accent: var(--accent--light);
+  --muted: var(--muted--light);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bkg: var(--bkg--dark);
+    --txt: var(--txt--dark);
+    --accent: var(--accent--dark);
+    --muted: var(--muted--dark);
+    color-scheme: dark;
+    --_shadow-strength: .75;
+    --_shadow-saturation: 75%;
+    --_shadow-lightness: 6%;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fdfdfd;
+}
+
+nav ul, nav ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  text-transform: capitalize;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  text-wrap: pretty;
+  color: #202020;
+}
+
+img,
+picture {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+:root button {
+  cursor: pointer;
+}
+
+@media all and (max-width: 575px) {
+  p {
+    font-size: 1rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
