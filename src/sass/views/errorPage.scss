@@ -1,0 +1,21 @@
+@use '../includes/mixins' as mx;
+@use '../includes/colors' as color;
+@use '../includes/typography' as font;
+@use '../includes/variables' as var;
+@use '../includes/classes';
+
+
+.error-container {
+  min-height: 75vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+  gap: 2rem;
+  .title {
+    margin-bottom: 2rem;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}

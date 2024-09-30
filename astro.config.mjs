@@ -6,7 +6,8 @@ export default defineConfig({
   integrations: [
     icon({
       include: {
-        ic: ['*']
+        ic: ['*'],
+        tabler: ['*']
       }
     })
   ],

@@ -1,0 +1,24 @@
+---
+// Components
+import Layout from "../layouts/Layout.astro";
+import Link from "../components/Link.astro";
+
+---
+
+<Layout title="Page Not Found">
+  <div class="container error-container">
+    <div>
+      <h1 class="title">Oops! Something went wrong...</h1>
+      <p>Or the resource that you are looking for does not exist.</p>
+    </div>
+    <Link
+      href="/"
+      style="secondary"
+      text="Go Home"
+      icon={{
+        name: "tabler:home",
+        side: "right"
+      }}
+    />
+  </div>
+</Layout>

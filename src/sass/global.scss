@@ -26,6 +26,10 @@ body {
   background-color: color.$white;
 }
 
+main {
+  min-height: 75vh;
+}
+
 nav ul, nav ol {
   list-style: none;
 }
@@ -57,7 +61,12 @@ picture {
   display: block;
 }
 
-:root 
+.container {
+  width: 100%;
+  max-width: 1500px;
+  margin-inline: auto;
+  padding: 1rem;
+}
 
 button {
   cursor: pointer;

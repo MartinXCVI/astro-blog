@@ -1,8 +1,27 @@
 ---
+// Components
 import Layout from "../layouts/Layout.astro";
+import Link from "../components/Link.astro";
 
 ---
 
 <Layout title="About">
-	<p>Hello from About</p>
+	<section class="container about" aria-label="About">
+		<img
+			src="/images/profile.jpg"
+			alt="My profile picture"
+			width="200"
+			height="330"
+		/>
+		<div class="content">
+			<h1 class="h1">My Blog</h1>
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non laboriosam commodi neque quam perferendis ducimus nesciunt est! Fugit tenetur enim aliquid laudantium totam. Itaque saepe expedita nam quas incidunt facere animi cupiditate beatae vero accusantium, sed aperiam ab ea quasi impedit porro illo dolorum neque inventore iusto aliquid fuga ex.</p>
+			<Link 
+				href="mailto:martin96rd@gmail.com"
+				style="primary"
+				text="Contact Me"
+				isFilled={false}
+			/>
+		</div>
+	</section>
 </Layout>

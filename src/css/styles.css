@@ -1,5 +1,4 @@
 /*----- Global -----*/
-/*----- Views -----*/
 /*----- Fonts & Icons -----*/
 @import url("https://fonts.googleapis.com/css2?family=Kurale&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
@@ -26,6 +25,10 @@ html {
 
 body {
   background-color: #fdfdfd;
+}
+
+main {
+  min-height: 75vh;
 }
 
 nav ul, nav ol {
@@ -58,7 +61,14 @@ picture {
   display: block;
 }
 
-:root button {
+.container {
+  width: 100%;
+  max-width: 1500px;
+  margin-inline: auto;
+  padding: 1rem;
+}
+
+button {
   cursor: pointer;
 }
 
@@ -158,6 +168,7 @@ picture {
 
 .primary {
   background-color: hsl(235, 40%, 5%) !important;
+  color: hsl(235, 25%, 97%) !important;
 }
 
 .secondary {
@@ -176,6 +187,46 @@ picture {
 
 [aria-current=page] {
   background-color: hsl(235, 55%, 50%);
+}
+
+/*----- Views -----*/
+.about {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+  margin-block: 2rem;
+}
+.about img {
+  border-radius: 100vmax;
+  height: 400px;
+  width: min(300px, 100%);
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0.2px 0.5px 0.6px hsla(235, 30%, 62%, 0.25), 1.1px 2.7px 3.3px -0.4px hsla(235, 30%, 62%, 0.25), 2.1px 5px 6.1px -0.7px hsla(235, 30%, 62%, 0.25), 3.5px 8.3px 10.1px -1.1px hsla(235, 30%, 62%, 0.25), 5.6px 13.2px 16.1px -1.4px hsla(235, 30%, 62%, 0.25), 8.7px 20.7px 25.3px -1.8px hsla(235, 30%, 62%, 0.25), 13.3px 31.4px 38.4px -2.1px hsla(235, 30%, 62%, 0.25), 19.6px 46.3px 56.6px -2.5px hsla(235, 30%, 62%, 0.25);
+}
+
+@media all and (min-width: 768px) {
+  .about {
+    grid-template-columns: 1fr 2fr;
+    place-content: center;
+  }
+  .about img {
+    justify-self: end;
+  }
+}
+.error-container {
+  min-height: 75vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+  gap: 2rem;
+}
+.error-container .title {
+  margin-bottom: 2rem;
+}
+.error-container p {
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
