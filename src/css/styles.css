@@ -264,6 +264,32 @@ button {
     border-radius: 0.5rem;
   }
 }
+.card {
+  display: grid;
+  background-color: hsl(235, 30%, 99%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.2px 0.5px 0.6px hsla(235, 30%, 62%, 0.25), 0.3px 0.8px 1px -1.2px hsla(235, 30%, 62%, 0.25), 0.8px 1.9px 2.3px -2.5px hsla(235, 30%, 62%, 0.25);
+}
+.card .badge {
+  color: #151515;
+}
+.card [aria-hidden=true] {
+  margin-inline: -1rem;
+  margin-block: 1rem;
+}
+.card img {
+  box-shadow: 0.2px 0.5px 0.6px hsla(235, 30%, 62%, 0.25), 0.3px 0.8px 1px -1.2px hsla(235, 30%, 62%, 0.25), 0.8px 1.9px 2.3px -2.5px hsla(235, 30%, 62%, 0.25);
+  object-fit: cover;
+}
+.card a {
+  text-decoration: none;
+}
+.card .content {
+  display: grid;
+  gap: 1rem;
+}
+
 /*----- Views -----*/
 .about {
   display: grid;

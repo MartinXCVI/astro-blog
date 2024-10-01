@@ -1,25 +1,26 @@
 /*----- Global -----*/
 @use './global.scss';
 
+
 /*----- Includes -----*/
 @use './includes/colors';
 @use './includes/mixins';
 @use './includes/typography';
 @use './includes/variables';
 
+
 /*----- Components -----*/
 @use './components/footer.scss';
 @use './components/navbar.scss';
 @use './components/link.scss';
 @use './components/blogPostLayout.scss';
+@use './components/postCard.scss';
 
-// For components
 
 /*----- Views -----*/
 @use './views/about.scss';
 @use './views/errorPage.scss';
 
-// For views
 
 /*----- Fonts & Icons -----*/
 

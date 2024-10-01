@@ -1,0 +1,37 @@
+@use '../includes/colors' as color;
+@use '../includes/mixins' as mx;
+@use '../includes/variables' as var;
+@use '../includes/typography' as font;
+@use '../includes/classes';
+
+.card {
+  // width: 35%;
+  display: grid;
+  background-color: hsl(235 30% 99%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.2px 0.5px 0.6px hsl(235 30% 62% / 0.25),
+  0.3px 0.8px 1px -1.2px hsl(235 30% 62% / 0.25),
+  0.8px 1.9px 2.3px -2.5px hsl(235 30% 62% / 0.25);
+
+  .badge {
+    color: color.$black;
+  }
+  [aria-hidden="true"] {
+    margin-inline: calc(1rem * -1);
+    margin-block: 1rem;
+  }
+  img {
+    box-shadow: 0.2px 0.5px 0.6px hsl(235 30% 62% / 0.25),
+    0.3px 0.8px 1px -1.2px hsl(235 30% 62% / 0.25),
+    0.8px 1.9px 2.3px -2.5px hsl(235 30% 62% / 0.25);
+    object-fit: cover;
+  }
+  a {
+    text-decoration: none;
+  }
+  .content {
+    display: grid;
+    gap: 1rem;
+  }
+}
