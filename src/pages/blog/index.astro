@@ -1,8 +1,13 @@
 ---
+// Components
 import PostCard from "../../components/PostCard.astro"
 import Layout from "../../layouts/Layout.astro"
 
+// Utils import
+import { formatBlogPosts } from "../../scripts/utils"
+
 const allPosts = await Astro.glob('./*.md')
+const formattedPosts = formatBlogPosts(allPosts)
 ---
 
 <Layout title="My Blog">
@@ -10,7 +15,7 @@ const allPosts = await Astro.glob('./*.md')
 		<h1 class="title capital">new blog posts</h1>
 		<div class="post-container">
 			{
-				allPosts.map((post)=> (
+				formattedPosts.map((post)=> (
 					<PostCard 
 						frontmatter={post.frontmatter} 
 						url={post.url}

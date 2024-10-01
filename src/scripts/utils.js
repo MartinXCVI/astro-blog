@@ -14,3 +14,37 @@ export function formatDate(date) {
     timeZone: "UTC",
   })
 }
+
+export function formatBlogPosts(posts, {
+  filterOutDrafts = true,
+  filterOutFuturePosts = true,
+  sortByDate = true,
+  limit = undefined,
+} = {}) {
+  const filteredPosts = posts.reduce((accumulator, post)=> {
+    const { date, draft } = post.frontmatter
+    // filterOutDrafts if true
+    if(filterOutDrafts && draft) return accumulator
+
+    // filterOutFuturePosts if true
+    if(filterOutFuturePosts && new Date(date) > new Date()) return accumulator
+
+    // add post to accumulator
+    accumulator.push(post)
+
+    return accumulator
+  }, [])
+
+  // sortByDate or randomly
+  if(sortByDate) {
+    filteredPosts.sort((a, b)=> new Date(b.frontmatter.date) - new Date(a.frontmatter.date))
+  } else {
+    filteredPosts.sort(()=> Math.random() - 0.5)
+  }
+
+  // limit if number is passed
+  if(typeof limit === "number") {
+    return filteredPosts.slice(0, limit)
+  }
+  return filteredPosts
+}

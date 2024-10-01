@@ -1,8 +1,50 @@
 ---
+// components
 import Layout from "../layouts/Layout.astro"
+import PostCard from "../components/PostCard.astro"
+import Link from "../components/Link.astro"
 
+// Utils import
+import { formatBlogPosts } from "../scripts/utils"
+
+const allPosts = await Astro.glob('./blog/*.md')
+const formattedPosts = formatBlogPosts(allPosts, {
+	limit: 3
+})
 ---
 
 <Layout title="Home">
-	<p>Hello from index</p>
+	<section class="container about" aria-label="About">
+		<img
+			src="/images/profile.jpg"
+			alt="My profile picture"
+			width="200"
+			height="330"
+		/>
+		<div class="content">
+			<h1 class="h1">My Blog</h1>
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non laboriosam commodi neque quam perferendis ducimus nesciunt est! Fugit tenetur enim aliquid laudantium totam.</p>
+			<Link 
+				href="/about/"
+				style="secondary"
+				text="About Me"
+				isFilled={false}
+				borderVisible={false}
+			/>
+		</div>
+	</section>
+	<section class="container" aria-label="New blog posts">
+		<h2 class="title capital">new blog posts</h2>
+		<div class="post-container">
+			{
+				formattedPosts.map((post)=> (
+					<PostCard 
+						frontmatter={post.frontmatter} 
+						url={post.url}
+						tagType="h3"
+					/>
+				))
+			}
+		</div>
+	</section>
 </Layout>
