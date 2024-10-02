@@ -1,0 +1,29 @@
+---
+import { formatBlogPosts, slugify } from "../scripts/utils"
+
+	const allPosts = await Astro.glob('../pages/blog/*.md')
+	const formattedPosts = formatBlogPosts(allPosts)
+  const allCategories = formattedPosts.map((category)=> category.frontmatter.category.toLowerCase()).flat()
+
+  const processedCategories = allCategories.reduce((accumulator, category)=> {
+    // check if the category exist in the accumulator
+    const value = accumulator[category] || 0
+
+    return {
+      ...accumulator,
+      [category]: value + 1
+    }
+  }, {})
+
+  const { showCount } = Astro.props
+---
+
+<ul class="categories">
+  {
+    Object.entries(processedCategories).map(([key, value])=> (
+      <li>
+        <a class="badge" href={`/category/${slugify(key)}`}>{key} {showCount && `(${value})`}</a>
+      </li>
+    ))
+  }
+</ul>
