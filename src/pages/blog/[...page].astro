@@ -1,0 +1,43 @@
+---
+// Components
+import PostCard from "../../components/PostCard.astro"
+import Layout from "../../layouts/Layout.astro"
+import Pagination from "../../components/Pagination.astro"
+
+// Utils import
+import { formatBlogPosts } from "../../scripts/utils"
+
+export async function getStaticPaths({ paginate }) {
+	const allPosts = await Astro.glob('./*.md')
+	const formattedPosts = formatBlogPosts(allPosts)
+	
+	return paginate(formattedPosts, {
+		pageSize: 3,
+	})
+}
+
+const { page } = Astro.props
+---
+
+<Layout title="My Blog">
+	<section class="container" aria-label="New blog posts">
+		<h1 class="title capital">Blog posts</h1>
+		<div class="post-container">
+			{
+				// ignore the 'error' in data prop
+				page.data.map((post)=> (
+					<PostCard 
+						frontmatter={post.frontmatter} 
+						url={post.url}
+						tagType="h2"
+					/>
+				))
+			}
+		</div>
+		<!--- ignore the 'error' in url props --->
+		<Pagination
+			prevUrl={page.url.prev}
+			nextUrl={page.url.next}
+		/>
+	</section>
+</Layout>
