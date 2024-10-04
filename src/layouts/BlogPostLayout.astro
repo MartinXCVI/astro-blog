@@ -22,7 +22,7 @@ const relatedPosts = formattedPosts.filter(
 
 ---
 
-<Layout title={title} {description}>
+<Layout title={title} {description} image={frontmatter.image} {frontmatter} robots={frontmatter.robots}>
   <PostHeader
     {title}
     {description}

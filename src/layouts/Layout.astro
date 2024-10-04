@@ -7,18 +7,17 @@ import Navbar from '../components/Navbar.astro';
 // Styles
 import '../css/styles.css'
 
-
-interface Props {
-  title?: string;
-  description?: string;
-}
-
-const { title, description } = Astro.props as Props
+const { title = "Astro Blog",
+  description = "Blog website developed with the Astro Framework",
+  image,
+  frontmatter,
+  robots
+} = Astro.props
 
 ---
 
 <html lang="en">
-  <Head title={title} description={description} />
+  <Head {title} {description} {image} {frontmatter} {robots} />
 	<body>
     <Navbar />
     <main>
