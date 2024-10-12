@@ -15,7 +15,7 @@
   list-style: none;
 }
 *::selection {
-  background-color: #007000;
+  background-color: #151515;
   color: #fdfdfd;
 }
 
@@ -63,15 +63,23 @@ picture {
 
 .container {
   width: 100%;
-  max-width: 1500px;
+  max-width: 1250px;
   margin-inline: auto;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
 }
 
 button {
   cursor: pointer;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #202020;
+  }
+  h1, h2, h3, h4, h5, h6, p {
+    color: #f6f6f6;
+  }
+}
 @media all and (max-width: 575px) {
   p {
     font-size: 1rem;
@@ -139,6 +147,29 @@ button {
   padding-inline: 1.5rem;
 }
 
+.logo {
+  color: #151515;
+}
+
+@media (prefers-color-scheme: dark) {
+  [aria-label=Primary] {
+    background-color: #060606;
+  }
+  .logo {
+    color: #f6f6f6;
+  }
+}
+@media all and (max-width: 767px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo {
+    margin-bottom: 1.25rem;
+  }
+}
 .link {
   width: fit-content;
   display: flex;
@@ -147,7 +178,7 @@ button {
   padding: 0.5rem 1.25rem;
   font-size: 1rem;
   border-radius: 0.25rem;
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   text-decoration: none;
   line-height: 1;
 }
@@ -189,6 +220,14 @@ button {
   background-color: hsl(235, 55%, 50%);
 }
 
+@media (prefers-color-scheme: dark) {
+  .filled {
+    color: hsl(235, 25%, 97%) !important;
+  }
+  .bordered {
+    border-color: hsl(235, 25%, 97%) !important;
+  }
+}
 .post-container {
   margin-block: 1.25rem;
   display: grid;
@@ -266,13 +305,16 @@ button {
 }
 .card {
   display: grid;
-  background-color: hsl(235, 30%, 99%);
-  padding: 1rem;
+  background-color: hsl(235, 30%, 95%);
+  padding: 1.5rem 1rem;
   border-radius: 0.5rem;
   box-shadow: 0.2px 0.5px 0.6px hsla(235, 30%, 62%, 0.25), 0.3px 0.8px 1px -1.2px hsla(235, 30%, 62%, 0.25), 0.8px 1.9px 2.3px -2.5px hsla(235, 30%, 62%, 0.25);
 }
 .card .badge {
-  color: #151515;
+  color: #f6f6f6;
+  background-color: #151515;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
 }
 .card [aria-hidden=true] {
   margin-inline: -1rem;
@@ -282,19 +324,52 @@ button {
   box-shadow: 0.2px 0.5px 0.6px hsla(235, 30%, 62%, 0.25), 0.3px 0.8px 1px -1.2px hsla(235, 30%, 62%, 0.25), 0.8px 1.9px 2.3px -2.5px hsla(235, 30%, 62%, 0.25);
   object-fit: cover;
 }
+.card .subtitle a {
+  color: #151515;
+  transition: 0.3s linear all;
+}
+.card .subtitle a:hover {
+  color: hsl(235, 55%, 50%);
+}
 .card a {
   text-decoration: none;
+}
+.card .post-author {
+  color: #151515;
+  transition: 0.3s linear all;
+}
+.card .post-author:hover {
+  color: hsl(235, 55%, 50%);
 }
 .card .content {
   display: grid;
   gap: 1rem;
 }
 
+@media (prefers-color-scheme: dark) {
+  .card {
+    background-color: #151515;
+  }
+  .card .badge {
+    color: #151515;
+    background-color: #f6f6f6;
+  }
+  .card .subtitle a {
+    color: #f6f6f6;
+  }
+  .card .post-author {
+    color: #f6f6f6;
+  }
+  .card .content {
+    color: #f6f6f6;
+  }
+}
 /*----- Views -----*/
 .about {
   display: grid;
   gap: 1.5rem;
   align-items: center;
+  justify-items: center;
   margin-block: 2rem;
 }
 .about img {

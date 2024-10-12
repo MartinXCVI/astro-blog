@@ -25,3 +25,29 @@
   margin-inline: auto;
   padding-inline: 1.5rem;
 }
+
+.logo {
+  color: color.$black;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  [aria-label="Primary"] {
+    background-color: color.$darkBlack;
+  }
+
+  .logo {
+    color: color.$whiteSmoke;
+  }
+}
+
+@media all and (max-width: 767px) {
+
+  .navbar {
+    @include mx.flexColCenter();
+  }
+
+  .logo {
+    margin-bottom: 1.25rem;
+  }
+}

@@ -31,7 +31,7 @@ const { title, date, author, image, description, category } = frontmatter
         <a href={url}>{title}</a>
       </Tag>
       <small>
-        by <a href={`/author/${slugify(author)}/`}>{author}
+        by <a class="post-author" href={`/author/${slugify(author)}/`}>{author}
         </a> · {formatDate(date)}
       </small>
     </div>

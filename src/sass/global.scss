@@ -13,7 +13,7 @@
   text-decoration: none;
   list-style: none;
   &::selection {
-    background-color: color.$firstColor;
+    background-color: color.$black;
     color: color.$white;
   }
 }
@@ -63,13 +63,24 @@ picture {
 
 .container {
   width: 100%;
-  max-width: 1500px;
+  max-width: 1250px;
   margin-inline: auto;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
 }
 
 button {
   cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background-color: color.$lightBlack;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    color: color.$whiteSmoke;
+  }
 }
 
 @media all and (max-width: 575px) {
