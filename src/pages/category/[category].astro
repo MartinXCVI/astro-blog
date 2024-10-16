@@ -37,8 +37,8 @@ const categoryPosts = formattedPosts.filter((post)=> slugify(post.frontmatter.ca
 
 
 <Layout title={name}>
-	<section class="container" aria-label={`Posts about ${name}`}>
-		<h1 class="title capital">Posts about <span>{name}</span></h1>
+	<section class="container categories-container" aria-label={`Posts about ${name}`}>
+		<h1 class="title capital">Posts about <span class="name-span">{name}</span></h1>
 		<div class="post-container">
 			{
 				categoryPosts.map((post)=> (

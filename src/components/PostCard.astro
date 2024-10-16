@@ -13,7 +13,7 @@ const Tag = tagType
 const { title, date, author, image, description, category } = frontmatter
 ---
 
-<article class="card">
+<article class="card overflow">
   <small><a href={`/category/${slugify(category)}/`} class="badge">{category}</a></small>
   <a href={url} aria-hidden="true" tabindex="-1">
     <Image
@@ -28,14 +28,14 @@ const { title, date, author, image, description, category } = frontmatter
   <div class="content">
     <div>
       <Tag class="subtitle">
-        <a href={url}>{title}</a>
+        <a href={url} title={title}>{title}</a>
       </Tag>
       <small>
         by <a class="post-author" href={`/author/${slugify(author)}/`}>{author}
         </a> · {formatDate(date)}
       </small>
     </div>
-    <p>{description}</p>
+    <p class="card-description">{description}</p>
     <Link
       href={url}
       text='Read Post'

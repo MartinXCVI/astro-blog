@@ -21,13 +21,17 @@
   width: 100%;
   display: flex;
   @include mx.flexRow(var.$between, center);
-  // max-width: 1500px;
+  max-width: 1500px;
   margin-inline: auto;
   padding-inline: 1.5rem;
 }
 
 .logo {
   color: color.$black;
+  transition: var.$trs03;
+  &:hover {
+    color: color.$firstColor;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

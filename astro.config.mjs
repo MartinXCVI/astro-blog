@@ -9,7 +9,8 @@ export default defineConfig({
   integrations: [icon({
     include: {
       ic: ['*'],
-      tabler: ['*']
+      tabler: ['*'],
+      pajamas: ['*']
     }
   }), sitemap()],
 });

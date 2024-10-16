@@ -8,7 +8,7 @@
   width: 100%;
   text-align: center;
   padding: 2rem;
-  background-color: color.$whiteSmoke;
+  background-color: color.$fifthColor;
   color: color.$black;
   box-shadow:     0.2px 0.5px 0.6px hsl(235 30% 62% / 0.25),
   1.1px 2.7px 3.3px -0.4px hsl(235 30% 62% / 0.25),
@@ -18,6 +18,18 @@
   8.7px 20.7px 25.3px -1.8px hsl(235 30% 62% / 0.25),
   13.3px 31.4px 38.4px -2.1px hsl(235 30% 62% / 0.25),
   19.6px 46.3px 56.6px -2.5px hsl(235 30% 62% / 0.25);;
+
+  .dev-signature {
+    font-size: 0.8rem;
+    padding-top: 1rem;
+    .github-link {
+      color: color.$secondColor;
+      transition: var.$trs03;
+      &:hover {
+        color: color.$thirdColor;
+      }
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {

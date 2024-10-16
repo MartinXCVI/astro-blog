@@ -1,3 +1,5 @@
+@use './typography' as font;
+
 .text-center {
   text-align: center;
 }
@@ -6,8 +8,24 @@
   text-transform: capitalize;
 }
 
+.title {
+  font-family: font.$titleFont;
+  letter-spacing: 0.25vw;
+  font-size: 3.25rem;
+}
+
+.subtitle {
+  font-family: font.$titleFont;
+  font-size: 2.5rem;
+  letter-spacing: 0.10vw;
+}
+
 .caps {
   text-transform: uppercase;
+}
+
+.overflow {
+  overflow: hidden;
 }
 
 .over-x {
@@ -16,8 +34,4 @@
 
 .over-y {
   overflow-y: hidden;
-}
-
-.over-hidden {
-  overflow: hidden;
 }

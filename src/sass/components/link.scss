@@ -12,9 +12,10 @@
   padding: 0.5rem 1.25rem;
   font-size: 1rem;
   border-radius: 0.25rem;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   text-decoration: none;
   line-height: 1;
+  transition: var.$trs03;
   &:focus-visible {
     box-shadow: 0 0 0 3px hsl(235 25% 97%), 0 0 0 6px transparent;
   }
@@ -28,7 +29,7 @@
   }
 
   &:hover {
-    opacity: .8;
+    opacity: 0.85;
   }
 }
 
@@ -37,12 +38,16 @@
   color: hsl(235 25% 97%) !important;
 }
 .secondary {
-  background-color: hsl(235 55% 50%) !important;
+  background-color: color.$secondColor !important;
   color: hsl(235 25% 97%) !important;
 }
 .filled {
   background-color: transparent !important;
   color: hsl(235 40% 5%) !important;
+  &:hover {
+    background-color: color.$darkerBlack !important;
+    color: color.$white !important;
+  }
 }
 .bordered {
   border-color: hsl(235 40% 5%);

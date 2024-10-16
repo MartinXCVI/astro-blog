@@ -5,20 +5,30 @@
 @use '../includes/classes';
 
 .card {
-  // width: 35%;
   display: grid;
   background-color: color.$fifthColor;
   padding: 1.5rem 1rem;
   border-radius: 0.5rem;
+  transition: var.$trs04;
   box-shadow: 0.2px 0.5px 0.6px hsl(235 30% 62% / 0.25),
   0.3px 0.8px 1px -1.2px hsl(235 30% 62% / 0.25),
   0.8px 1.9px 2.3px -2.5px hsl(235 30% 62% / 0.25);
+  &:hover {
+    box-shadow: 2px 2px 1.5px hsl(235 30% 62% / 0.25),
+    3px 3px 2px 2.5px hsl(235 30% 62% / 0.25),
+    5px 5px 3px 3.5px hsl(235 30% 62% / 0.25);
+  }
 
   .badge {
     color: color.$whiteSmoke;
     background-color: color.$black;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
+    font-weight: bold;
+    transition: var.$trs03;
+    &:hover {
+      background-color: color.$secondColor;
+    }
   }
   [aria-hidden="true"] {
     margin-inline: calc(1rem * -1);
@@ -29,8 +39,13 @@
     0.3px 0.8px 1px -1.2px hsl(235 30% 62% / 0.25),
     0.8px 1.9px 2.3px -2.5px hsl(235 30% 62% / 0.25);
     object-fit: cover;
+    transition: var.$trs03;
+    &:hover {
+      transform: scale(1.05);
+    }
   }
   .subtitle a {
+    font-size: 1.5rem;
     color: color.$black;
     transition: var.$trs03;
     &:hover {
@@ -50,13 +65,36 @@
   .content {
     display: grid;
     gap: 1rem;
+    .subtitle a {
+      display: -webkit-box;
+      line-clamp: 2 !important;
+      -webkit-line-clamp: 2 !important;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+  .card-description {
+    display: -webkit-box;
+    line-clamp: 3 !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
+
 
 @media (prefers-color-scheme: dark) {
   
   .card {
-    background-color: color.$black;
+    background-color: color.$deepBlack;
+    box-shadow: 0.2px 0.5px 0.6px color.$softerBlack,
+    0.3px 0.8px 1px -1.2px color.$softerBlack,
+    0.8px 1.9px 2.3px -2.5px color.$softerBlack;
+    &:hover {
+      box-shadow: 1px 1px 1.5px color.$black,
+      2px 2px 1px 2px color.$black,
+      3px 3px 2px 3px color.$black;
+    }
     .badge {
       color: color.$black;
       background-color: color.$whiteSmoke;

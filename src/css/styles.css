@@ -1,6 +1,5 @@
 /*----- Global -----*/
 /*----- Fonts & Icons -----*/
-@import url("https://fonts.googleapis.com/css2?family=Kurale&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css");
@@ -10,7 +9,7 @@
   padding: 0;
   outline: none;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Montserrat", sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   text-decoration: none;
   list-style: none;
 }
@@ -63,6 +62,7 @@ picture {
 
 .container {
   width: 100%;
+  min-height: 85vh;
   max-width: 1250px;
   margin-inline: auto;
   padding: 1rem 1.5rem;
@@ -73,6 +73,10 @@ button {
 }
 
 @media (prefers-color-scheme: dark) {
+  *::selection {
+    background-color: hsl(0, 100%, 20%);
+    color: #fdfdfd;
+  }
   body {
     background-color: #202020;
   }
@@ -95,8 +99,24 @@ button {
   text-transform: capitalize;
 }
 
+.title {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.25vw;
+  font-size: 3.25rem;
+}
+
+.subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.1vw;
+}
+
 .caps {
   text-transform: uppercase;
+}
+
+.overflow {
+  overflow: hidden;
 }
 
 .over-x {
@@ -107,17 +127,24 @@ button {
   overflow-y: hidden;
 }
 
-.over-hidden {
-  overflow: hidden;
-}
-
 .footer {
   width: 100%;
   text-align: center;
   padding: 2rem;
-  background-color: #f6f6f6;
+  background-color: hsl(230, 15%, 95%);
   color: #151515;
   box-shadow: 0.2px 0.5px 0.6px hsla(235, 30%, 62%, 0.25), 1.1px 2.7px 3.3px -0.4px hsla(235, 30%, 62%, 0.25), 2.1px 5px 6.1px -0.7px hsla(235, 30%, 62%, 0.25), 3.5px 8.3px 10.1px -1.1px hsla(235, 30%, 62%, 0.25), 5.6px 13.2px 16.1px -1.4px hsla(235, 30%, 62%, 0.25), 8.7px 20.7px 25.3px -1.8px hsla(235, 30%, 62%, 0.25), 13.3px 31.4px 38.4px -2.1px hsla(235, 30%, 62%, 0.25), 19.6px 46.3px 56.6px -2.5px hsla(235, 30%, 62%, 0.25);
+}
+.footer .dev-signature {
+  font-size: 0.8rem;
+  padding-top: 1rem;
+}
+.footer .dev-signature .github-link {
+  color: hsl(0, 95%, 30%);
+  transition: 0.3s linear all;
+}
+.footer .dev-signature .github-link:hover {
+  color: hsl(0, 100%, 40%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -129,7 +156,7 @@ button {
 [aria-label=Primary] {
   width: 100%;
   padding: 1rem;
-  background-color: hsl(235, 30%, 95%);
+  background-color: hsl(230, 15%, 95%);
   box-shadow: 0.5px 0.75px 0.6px hsla(235, 30%, 62%, 0.25), 0.75px 1px 1px -1.2px hsla(235, 30%, 62%, 0.25), 1px 2.25px 2.5px -2.5px hsla(235, 30%, 62%, 0.25);
 }
 [aria-label=Primary] ul {
@@ -143,12 +170,17 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1500px;
   margin-inline: auto;
   padding-inline: 1.5rem;
 }
 
 .logo {
   color: #151515;
+  transition: 0.3s linear all;
+}
+.logo:hover {
+  color: hsl(0, 100%, 20%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -178,9 +210,10 @@ button {
   padding: 0.5rem 1.25rem;
   font-size: 1rem;
   border-radius: 0.25rem;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   text-decoration: none;
   line-height: 1;
+  transition: 0.3s linear all;
 }
 .link:focus-visible {
   box-shadow: 0 0 0 3px hsl(235, 25%, 97%), 0 0 0 6px transparent;
@@ -194,7 +227,7 @@ button {
   width: 1rem;
 }
 .link:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .primary {
@@ -203,13 +236,17 @@ button {
 }
 
 .secondary {
-  background-color: hsl(235, 55%, 50%) !important;
+  background-color: hsl(0, 95%, 30%) !important;
   color: hsl(235, 25%, 97%) !important;
 }
 
 .filled {
   background-color: transparent !important;
   color: hsl(235, 40%, 5%) !important;
+}
+.filled:hover {
+  background-color: #020202 !important;
+  color: #fdfdfd !important;
 }
 
 .bordered {
@@ -233,6 +270,14 @@ button {
   display: grid;
   align-items: start;
   gap: 1.25rem;
+}
+
+.name-span {
+  color: hsl(0, 100%, 40%);
+  transition: 0.3s linear all;
+}
+.name-span:hover {
+  color: hsl(0, 95%, 30%);
 }
 
 .post-content {
@@ -261,6 +306,35 @@ button {
   padding: 0;
 }
 
+.blog-categories-container {
+  height: unset;
+  min-height: unset;
+}
+
+.authors-container, .categories-container {
+  padding: 3rem;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 0;
+  gap: 0.5rem;
+}
+.categories .badge {
+  color: #f6f6f6;
+  background-color: #151515;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  transition: 0.3s linear all;
+}
+.categories .badge:hover {
+  background-color: hsl(0, 95%, 30%);
+}
+
 .hero-image {
   box-shadow: 0.2px 0.5px 0.6px hsla(235, 30%, 62%, 0.29), 0.6px 1.5px 1.8px -0.8px hsla(235, 30%, 62%, 0.29), 1.6px 3.8px 4.6px -1.7px hsla(235, 30%, 62%, 0.29), 3.9px 9.3px 11.3px -2.5px hsla(235, 30%, 62%, 0.29);
   object-fit: cover;
@@ -284,17 +358,27 @@ button {
     margin: 0;
   }
   aside {
-    text-align: left;
+    text-align: center;
     justify-content: start;
     justify-items: start;
   }
-  aside .categories {
-    justify-content: start;
+}
+@media all and (max-width: 767px) {
+  .categories {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .categories li {
+    margin-bottom: 1rem;
   }
 }
 @media all and (min-width: 991px) {
+  .blog-container {
+    padding-top: 3rem;
+  }
   .post-container {
     grid-template-columns: 1fr 1fr 1fr;
+    margin-block: 3rem;
   }
   .post-content {
     grid-template-columns: 1fr minmax(auto, 300px);
@@ -305,16 +389,25 @@ button {
 }
 .card {
   display: grid;
-  background-color: hsl(235, 30%, 95%);
+  background-color: hsl(230, 15%, 95%);
   padding: 1.5rem 1rem;
   border-radius: 0.5rem;
+  transition: 0.4s linear all;
   box-shadow: 0.2px 0.5px 0.6px hsla(235, 30%, 62%, 0.25), 0.3px 0.8px 1px -1.2px hsla(235, 30%, 62%, 0.25), 0.8px 1.9px 2.3px -2.5px hsla(235, 30%, 62%, 0.25);
+}
+.card:hover {
+  box-shadow: 2px 2px 1.5px hsla(235, 30%, 62%, 0.25), 3px 3px 2px 2.5px hsla(235, 30%, 62%, 0.25), 5px 5px 3px 3.5px hsla(235, 30%, 62%, 0.25);
 }
 .card .badge {
   color: #f6f6f6;
   background-color: #151515;
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
+  font-weight: bold;
+  transition: 0.3s linear all;
+}
+.card .badge:hover {
+  background-color: hsl(0, 95%, 30%);
 }
 .card [aria-hidden=true] {
   margin-inline: -1rem;
@@ -323,13 +416,18 @@ button {
 .card img {
   box-shadow: 0.2px 0.5px 0.6px hsla(235, 30%, 62%, 0.25), 0.3px 0.8px 1px -1.2px hsla(235, 30%, 62%, 0.25), 0.8px 1.9px 2.3px -2.5px hsla(235, 30%, 62%, 0.25);
   object-fit: cover;
+  transition: 0.3s linear all;
+}
+.card img:hover {
+  transform: scale(1.05);
 }
 .card .subtitle a {
+  font-size: 1.5rem;
   color: #151515;
   transition: 0.3s linear all;
 }
 .card .subtitle a:hover {
-  color: hsl(235, 55%, 50%);
+  color: hsl(0, 95%, 30%);
 }
 .card a {
   text-decoration: none;
@@ -339,16 +437,34 @@ button {
   transition: 0.3s linear all;
 }
 .card .post-author:hover {
-  color: hsl(235, 55%, 50%);
+  color: hsl(0, 95%, 30%);
 }
 .card .content {
   display: grid;
   gap: 1rem;
 }
+.card .content .subtitle a {
+  display: -webkit-box;
+  line-clamp: 2 !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card .card-description {
+  display: -webkit-box;
+  line-clamp: 3 !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 @media (prefers-color-scheme: dark) {
   .card {
-    background-color: #151515;
+    background-color: #101010;
+    box-shadow: 0.2px 0.5px 0.6px #353535, 0.3px 0.8px 1px -1.2px #353535, 0.8px 1.9px 2.3px -2.5px #353535;
+  }
+  .card:hover {
+    box-shadow: 1px 1px 1.5px #151515, 2px 2px 1px 2px #151515, 3px 3px 2px 3px #151515;
   }
   .card .badge {
     color: #151515;
@@ -378,16 +494,33 @@ button {
   width: min(300px, 100%);
   object-fit: cover;
   object-position: center;
-  box-shadow: 0.2px 0.5px 0.6px hsla(235, 30%, 62%, 0.25), 1.1px 2.7px 3.3px -0.4px hsla(235, 30%, 62%, 0.25), 2.1px 5px 6.1px -0.7px hsla(235, 30%, 62%, 0.25), 3.5px 8.3px 10.1px -1.1px hsla(235, 30%, 62%, 0.25), 5.6px 13.2px 16.1px -1.4px hsla(235, 30%, 62%, 0.25), 8.7px 20.7px 25.3px -1.8px hsla(235, 30%, 62%, 0.25), 13.3px 31.4px 38.4px -2.1px hsla(235, 30%, 62%, 0.25), 19.6px 46.3px 56.6px -2.5px hsla(235, 30%, 62%, 0.25);
+  box-shadow: 0.2px 0.5px 0.6px #808080, 1.1px 2.7px 3.3px -0.4px #808080, 2.1px 5px 6.1px -0.7px #808080, 3.5px 8.3px 10.1px -1.1px #808080, 5.6px 13.2px 16.1px -1.4px #808080, 8.7px 20.7px 25.3px -1.8px #808080, 13.3px 31.4px 38.4px -2.1px #808080, 19.6px 46.3px 56.6px -2.5px #808080;
+}
+.about .content {
+  display: grid;
+  gap: 1rem;
+}
+.about .content .para {
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 
+@media (prefers-color-scheme: dark) {
+  .about img {
+    box-shadow: 0.2px 0.5px 0.6px #101010, 1.1px 2.7px 3.3px -0.4px #101010, 2.1px 5px 6.1px -0.7px #101010, 3.5px 8.3px 10.1px -1.1px #101010, 5.6px 13.2px 16.1px -1.4px #101010, 8.7px 20.7px 25.3px -1.8px #101010, 13.3px 31.4px 38.4px -2.1px #101010, 19.6px 46.3px 56.6px -2.5px #101010;
+  }
+}
 @media all and (min-width: 768px) {
   .about {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 3fr 4fr 1fr;
     place-content: center;
   }
   .about img {
     justify-self: end;
+  }
+  .about .content {
+    justify-self: center;
+    margin-left: 1rem;
   }
 }
 .error-container {
