@@ -47,6 +47,38 @@
   }
 }
 
+aside.container {
+  min-height: unset;
+  .post {
+    font-size: 1.5rem;
+    .subtitle a {
+      font-size: 1.25rem;
+      color: color.$secondColor;
+      transition: var.$trs03;
+      &:hover {
+        color: color.$thirdColor;
+      }
+    }
+    small {
+      color: color.$white;
+      font-size: 1rem;
+      a {
+        color: color.$secondColor;
+        transition: var.$trs03;
+        &:hover {
+          color: color.$thirdColor;
+        }
+      }
+    }
+  }
+}
+
+aside.container {
+  .title {
+    font-size: 2rem;
+  }
+}
+
 .blog-categories-container {
   height: unset;
   min-height: unset;
@@ -85,7 +117,17 @@
 }
 
 
+@media all and (max-width: 479px) {
+
+  header .container {
+    .subtitle {
+      font-size: 2.25rem;
+    }
+  }
+}
+
 @media all and (min-width: 480px) {
+
   aside {
     flex: 1 1 40%;
   }

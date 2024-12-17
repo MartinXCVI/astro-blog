@@ -60,6 +60,27 @@ picture {
   display: block;
 }
 
+header .container {
+  min-height: unset;
+}
+header .container .subtitle {
+  margin-block: 0.5rem;
+}
+header .container small a {
+  color: hsl(0, 95%, 30%);
+  transition: 0.3s linear all;
+}
+header .container small a:hover {
+  color: hsl(0, 100%, 40%);
+}
+header .container p .header-author {
+  color: hsl(0, 95%, 30%);
+  transition: 0.3s linear all;
+}
+header .container p .header-author:hover {
+  color: hsl(0, 100%, 40%);
+}
+
 .container {
   width: 100%;
   min-height: 85vh;
@@ -306,6 +327,36 @@ button {
   padding: 0;
 }
 
+aside.container {
+  min-height: unset;
+}
+aside.container .post {
+  font-size: 1.5rem;
+}
+aside.container .post .subtitle a {
+  font-size: 1.25rem;
+  color: hsl(0, 95%, 30%);
+  transition: 0.3s linear all;
+}
+aside.container .post .subtitle a:hover {
+  color: hsl(0, 100%, 40%);
+}
+aside.container .post small {
+  color: #fdfdfd;
+  font-size: 1rem;
+}
+aside.container .post small a {
+  color: hsl(0, 95%, 30%);
+  transition: 0.3s linear all;
+}
+aside.container .post small a:hover {
+  color: hsl(0, 100%, 40%);
+}
+
+aside.container .title {
+  font-size: 2rem;
+}
+
 .blog-categories-container {
   height: unset;
   min-height: unset;
@@ -340,6 +391,11 @@ button {
   object-fit: cover;
 }
 
+@media all and (max-width: 479px) {
+  header .container .subtitle {
+    font-size: 2.25rem;
+  }
+}
 @media all and (min-width: 480px) {
   aside {
     flex: 1 1 40%;

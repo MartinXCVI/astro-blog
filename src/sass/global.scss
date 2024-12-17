@@ -61,6 +61,27 @@ picture {
   display: block;
 }
 
+header .container {
+  min-height: unset;
+  .subtitle {
+    margin-block: 0.5rem;
+  }
+  small a {
+    color: color.$secondColor;
+    transition: var.$trs03;
+    &:hover {
+      color: color.$thirdColor;
+    }
+  }
+  p .header-author {
+    color: color.$secondColor;
+    transition: var.$trs03;
+    &:hover {
+      color: color.$thirdColor;
+    }
+  }
+}
+
 .container {
   width: 100%;
   min-height: 85vh;
