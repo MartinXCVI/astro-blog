@@ -5,6 +5,17 @@
 @use '../includes/classes';
 
 
+.pagination-nav {
+  a {
+    min-width: 8.5rem;
+    display: inline-flex;
+    justify-content: center;
+  }
+  a:first-of-type {
+    margin-bottom: 0.5rem;
+  }
+}
+
 .post-container {
   margin-block: 1.25rem;
   display: grid;
